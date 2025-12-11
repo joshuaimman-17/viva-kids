@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import './SectionLayout.css';
+import '../SectionLayout.css';
 import './Founder.css';
 
 const Founder = () => {

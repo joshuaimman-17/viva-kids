@@ -1,20 +1,21 @@
 import React from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import About from './components/About';
-import Philosophy from './components/Philosophy';
-import Advantage from './components/Advantage';
-import Programs from './components/Programs';
-import WhyChooseUs from './components/WhyChooseUs';
-import Achievements from './components/Achievements';
-import Founder from './components/Founder';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import Infrastructure from './components/Infrastructure';
+import Header from './components/Header/Header';
+import Hero from './components/Hero/Hero';
+import About from './components/About/About';
+import Philosophy from './components/Philosophy/Philosophy';
+import Advantage from './components/Advantage/Advantage';
+import Programs from './components/Programs/Programs';
+import WhyChooseUs from './components/WhyChooseUs/WhyChooseUs';
+import Achievements from './components/Achievements/Achievements';
+import Founder from './components/Founder/Founder';
+import Contact from './components/Contact/Contact';
+import Footer from './components/Footer/Footer';
+import Infrastructure from './components/Infrastructure/Infrastructure';
+import Gallery from './components/Gallery/Gallery';
 
-import EnquiryModal from './components/EnquiryModal';
-import CursorTrail from './components/CursorTrail';
-import FloatingShapes from './components/FloatingShapes';
+import EnquiryModal from './components/EnquiryModal/EnquiryModal';
+import CursorTrail from './components/CursorTrail/CursorTrail';
+import FloatingShapes from './components/FloatingShapes/FloatingShapes';
 
 function App() {
     const [modalType, setModalType] = React.useState<string | null>(null);
@@ -36,6 +37,7 @@ function App() {
             <Programs />
             <WhyChooseUs />
             <Achievements />
+            <Gallery />
             <Founder />
             <Contact />
             <Footer onAdmission={openAdmission} onFranchise={openFranchise} />

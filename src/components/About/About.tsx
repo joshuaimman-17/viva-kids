@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import './SectionLayout.css';
+import '../SectionLayout.css';
 
 const About = () => {
     return (
@@ -30,7 +30,7 @@ const About = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <img src="/assets/png home 3.png" alt="About Us" />
+                        <img src="/assets/playing.png" alt="About Us" />
                     </motion.div>
                 </div>
             </div>
