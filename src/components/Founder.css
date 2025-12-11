@@ -1,0 +1,44 @@
+.founder-section {
+    background: linear-gradient(135deg, #fff 0%, #f3f4f6 100%);
+}
+
+.founder-img-wrapper {
+    position: relative;
+    max-width: 400px;
+}
+
+.founder-img-wrapper img {
+    border-radius: 20px 20px 0 0;
+    box-shadow: var(--shadow-lg);
+}
+
+.founder-badge {
+    background-color: var(--primary);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-radius: 0 0 20px 20px;
+    box-shadow: var(--shadow-md);
+}
+
+.founder-content-box {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    border-left: 5px solid var(--secondary);
+}
+
+.founder-content-box p {
+    margin-bottom: 1.5rem;
+    color: #555;
+    line-height: 1.8;
+}
+
+.founder-signature-logo {
+    height: 50px;
+    margin-top: 1rem;
+    object-fit: contain;
+}

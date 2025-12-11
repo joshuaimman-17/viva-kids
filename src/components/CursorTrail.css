@@ -1,0 +1,30 @@
+.cursor-trail-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.trail-particle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.8;
+    pointer-events: none;
+    animation: fadeAndFall 1s forwards;
+}
+
+@keyframes fadeAndFall {
+    0% {
+        opacity: 0.8;
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(0, 50px) scale(0);
+    }
+}
