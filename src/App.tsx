@@ -17,8 +17,19 @@ import EnquiryModal from './components/EnquiryModal/EnquiryModal';
 import CursorTrail from './components/CursorTrail/CursorTrail';
 import FloatingShapes from './components/FloatingShapes/FloatingShapes';
 
+import AdminLoginModal from './components/AdminLoginModal/AdminLoginModal';
+import AdminDashboard from './components/AdminDashboard/AdminDashboard';
+
 function App() {
     const [modalType, setModalType] = React.useState<string | null>(null);
+    const [isAdminLoginOpen, setIsAdminLoginOpen] = React.useState(false);
+    const [isAdminDashboardOpen, setIsAdminDashboardOpen] = React.useState(false);
+
+    React.useEffect(() => {
+        const handleAdminTrigger = () => setIsAdminLoginOpen(true);
+        window.addEventListener('openAdminLogin', handleAdminTrigger);
+        return () => window.removeEventListener('openAdminLogin', handleAdminTrigger);
+    }, []);
 
     const openAdmission = () => setModalType('admission');
     const openFranchise = () => setModalType('franchise');
@@ -46,6 +57,20 @@ function App() {
                 isOpen={!!modalType}
                 onClose={closeModal}
                 type={modalType}
+            />
+
+            <AdminLoginModal
+                isOpen={isAdminLoginOpen}
+                onClose={() => setIsAdminLoginOpen(false)}
+                onLogin={() => {
+                    setIsAdminLoginOpen(false);
+                    setIsAdminDashboardOpen(true);
+                }}
+            />
+
+            <AdminDashboard
+                isOpen={isAdminDashboardOpen}
+                onClose={() => setIsAdminDashboardOpen(false)}
             />
         </div>
     );

@@ -20,6 +20,25 @@ const Header: React.FC<HeaderProps> = ({ onEnroll }) => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    const [clickCount, setClickCount] = useState(0);
+
+    // Reset click count after 3 seconds of inactivity
+    useEffect(() => {
+        if (clickCount > 0) {
+            const timer = setTimeout(() => setClickCount(0), 3000);
+            return () => clearTimeout(timer);
+        }
+    }, [clickCount]);
+
+    const handleLogoClick = () => {
+        setClickCount(prev => prev + 1);
+        if (clickCount + 1 === 5) {
+            // Trigger Admin Login
+            window.dispatchEvent(new CustomEvent('openAdminLogin'));
+            setClickCount(0);
+        }
+    };
+
     const navLinks = [
         { name: 'Home', to: 'hero' },
         { name: 'About Us', to: 'about' },
@@ -33,7 +52,7 @@ const Header: React.FC<HeaderProps> = ({ onEnroll }) => {
     return (
         <header className={`header ${scrolled ? 'scrolled' : ''}`}>
             <div className="container header-container">
-                <div className="logo">
+                <div className="logo" onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
                     <img src="/assets/logotm.jpg" alt="Viva Kids World" />
                 </div>
 
