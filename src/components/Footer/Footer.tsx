@@ -16,7 +16,7 @@ const Footer: React.FC<FooterProps> = ({ onAdmission, onFranchise }) => {
                 <div className="container text-center">
                     <p>&copy; {new Date().getFullYear()} Viva Kids World.</p>
                     <br />
-                    <p className="powered-by">Powered by Cookies Tech</p>
+                    <p className="powered-by">Powered by FlipFlex</p>
 
                     <div className="footer-links">
                         <button onClick={onAdmission} className="footer-link">Admission</button>
