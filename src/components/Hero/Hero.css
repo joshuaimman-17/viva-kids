@@ -5,7 +5,7 @@
     display: flex;
     align-items: center;
     overflow: hidden;
-    background-color: var(--bg-creamy);
+    background-color: transparent;
 }
 
 .hero-background {
@@ -53,7 +53,7 @@
     font-size: 4rem;
     line-height: 1.1;
     margin-bottom: 1.5rem;
-    color: var(--dark);
+    color: var(--primary);
     font-weight: 800;
 }
 
@@ -94,13 +94,11 @@
     flex: 1;
     display: flex;
     justify-content: center;
-}
-
-.hero-image img {
-    max-width: 100%;
-    height: auto;
-    max-height: 500px;
-    object-fit: contain;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    max-width: 550px;
+    height: 500px;
 }
 
 @media (max-width: 992px) {

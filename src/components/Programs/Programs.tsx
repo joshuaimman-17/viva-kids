@@ -4,10 +4,30 @@ import './Programs.css';
 
 const Programs = () => {
     const programs = [
-        { title: 'Playgroup', desc: 'A fun and engaging start to early learning!', color: '#FF6B6B' },
-        { title: 'Nursery', desc: 'Building strong foundations with playful activities.', color: '#4ECDC4' },
-        { title: 'Jr.KG', desc: 'Motivate creativity and curiosity in young minds.', color: '#45B7D1' },
-        { title: 'Sr.KG', desc: 'Preparing kids for a confident academic journey.', color: '#96CEB4' }
+        {
+            title: 'Playgroup',
+            desc: 'A fun and engaging start to early learning!',
+            color: '#FF6B6B',
+            image: '/assets/playgroupimg.jpg'
+        },
+        {
+            title: 'Nursery',
+            desc: 'Building strong foundations with playful activities.',
+            color: '#4ECDC4',
+            image: '/assets/little1.jpg'
+        },
+        {
+            title: 'Jr.KG',
+            desc: 'Motivate creativity and curiosity in young minds.',
+            color: '#45B7D1',
+            image: '/assets/little2.jpg'
+        },
+        {
+            title: 'Sr.KG',
+            desc: 'Preparing kids for a confident academic journey.',
+            color: '#96CEB4',
+            image: '/assets/seniorkgimg.jpg'
+        }
     ];
 
     return (
@@ -35,6 +55,7 @@ const Programs = () => {
                         >
                             <div className="card-inner">
                                 <div className="card-front" style={{ backgroundColor: program.color }}>
+                                    <img src={program.image} alt={program.title} className="card-image" />
                                     <h3>{program.title}</h3>
                                 </div>
                                 <div className="card-back">

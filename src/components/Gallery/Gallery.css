@@ -1,6 +1,6 @@
 .gallery-section {
-    padding: 5rem 0;
-    background-color: #f9f9f9;
+    padding: 6rem 0;
+    background-color: transparent;
 }
 
 .gallery-grid {
@@ -12,28 +12,15 @@
 
 .gallery-item {
     border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: visible;
+    transition: transform 0.3s ease;
     cursor: pointer;
     aspect-ratio: 1;
     /* Make them square tiles */
 }
 
 .gallery-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.gallery-item:hover img {
-    transform: scale(1.1);
+    transform: translateY(-5px) scale(1.02);
 }
 
 @media (max-width: 768px) {

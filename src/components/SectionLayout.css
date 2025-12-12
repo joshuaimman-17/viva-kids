@@ -58,8 +58,8 @@
 
 .section-title {
     font-size: 3rem;
-    margin-bottom: 1.5rem;
-    color: var(--dark);
+    margin-bottom: 1rem;
+    color: var(--primary);
     font-family: var(--font-heading);
     font-weight: 700;
 }

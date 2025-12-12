@@ -43,6 +43,7 @@ const Header: React.FC<HeaderProps> = ({ onEnroll }) => {
         { name: 'Home', to: 'hero' },
         { name: 'About Us', to: 'about' },
         { name: 'Philosophy', to: 'philosophy' },
+        { name: 'Innovation', to: 'innovation' },
         { name: 'Programs', to: 'programs' },
         { name: 'Achievements', to: 'achievements' },
         { name: 'Founder', to: 'founder' },
@@ -68,7 +69,6 @@ const Header: React.FC<HeaderProps> = ({ onEnroll }) => {
                             {link.name}
                         </ScrollLink>
                     ))}
-                    <button className="enroll-btn" onClick={onEnroll}>Enroll Now</button>
                 </nav>
 
                 <div className="mobile-toggle" onClick={() => setIsOpen(!isOpen)}>
@@ -97,7 +97,6 @@ const Header: React.FC<HeaderProps> = ({ onEnroll }) => {
                                     {link.name}
                                 </ScrollLink>
                             ))}
-                            <button className="enroll-btn mobile" onClick={() => { setIsOpen(false); onEnroll(); }}>Enroll Now</button>
                         </div>
                     </motion.div>
                 )}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import FramedImage from '../FramedImage/FramedImage';
 import './Gallery.css';
 
 const Gallery = () => {
@@ -42,7 +43,7 @@ const Gallery = () => {
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.05 }}
                         >
-                            <img src={img} alt={`Gallery Image ${index + 1}`} loading="lazy" />
+                            <FramedImage src={img} alt={`Gallery Image ${index + 1}`} />
                         </motion.div>
                     ))}
                 </div>

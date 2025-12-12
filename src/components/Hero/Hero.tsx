@@ -1,8 +1,36 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import FramedImage from '../FramedImage/FramedImage';
 import './Hero.css';
 
 const Hero = () => {
+    // Gallery images for slideshow
+    const images = [
+        "/assets/little1.jpg",
+        "/assets/little2.jpg",
+        "/assets/playgroupimg.jpg",
+        "/assets/seniorkgimg.jpg",
+        "/assets/play1.jpeg",
+        "/assets/play2.jpeg",
+        "/assets/play3.jpeg",
+        "/assets/christmas.jpeg",
+        "/assets/diwali.jpeg",
+        "/assets/pongal.jpeg"
+    ];
+
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+    // Auto-rotate images every 3 seconds
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentImageIndex((prevIndex) =>
+                prevIndex === images.length - 1 ? 0 : prevIndex + 1
+            );
+        }, 3000); // Change image every 3 seconds
+
+        return () => clearInterval(interval);
+    }, [images.length]);
+
     return (
         <section id="hero" className="hero-section">
             <div className="hero-background"></div>
@@ -34,19 +62,27 @@ const Hero = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.7, duration: 0.8 }}
                     >
-                        <button className="btn btn-primary">Our Philosophy</button>
-                        <button className="btn btn-secondary">Contact Us</button>
+
                     </motion.div>
                 </motion.div>
 
-                <motion.div
-                    className="hero-image"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8 }}
-                >
-                    <img src="/assets/png home 3.png" alt="Happy Kids" />
-                </motion.div>
+                <div className="hero-image">
+                    <AnimatePresence mode="wait">
+                        <motion.div
+                            key={currentImageIndex}
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.9 }}
+                            transition={{ duration: 0.5 }}
+                            style={{ width: '100%', height: '100%' }}
+                        >
+                            <FramedImage
+                                src={images[currentImageIndex]}
+                                alt={`Happy Kids ${currentImageIndex + 1}`}
+                            />
+                        </motion.div>
+                    </AnimatePresence>
+                </div>
             </div>
         </section>
     );

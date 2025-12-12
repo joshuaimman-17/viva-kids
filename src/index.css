@@ -2,17 +2,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Nunito:wght@400;600;700&display=swap');
 
 :root {
-  /* Viva Kids World - Exact Colors from Legacy Source */
-  --primary: #6AABD2;
-  /* Soft Blue - Main brand color */
-  --primary-light: #8BBFDD;
+  /* Viva Kids World - New Dominant Color */
+  --primary: #00316E;
+  /* Dark Navy Blue - Main brand color */
+  --primary-light: #1a4d8f;
   --secondary: #F5E8C7;
   /* Warm Beige - Secondary accent */
   --accent: #C4DFAA;
   /* Soft Green - Cheerful highlights */
   --success: #4CAF50;
   /* Green - Success states */
-  --dark: #17395c;
+  --dark: #00316E;
   /* Dark Navy Blue - Text and headers */
   --light: #F8F9FA;
   /* Light Grey - Clean backgrounds */
@@ -37,7 +37,11 @@
 
 body {
   font-family: var(--font-main);
-  background-color: var(--bg-creamy);
+  background-image: url('/assets/backcloud1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   color: var(--dark);
   line-height: 1.6;
   overflow-x: hidden;
@@ -55,7 +59,7 @@ h6 {
 
 a {
   text-decoration: none;
-  color: inherit;
+  color: var(--primary);
 }
 
 ul {
@@ -100,9 +104,9 @@ ul {
 
 .btn-secondary {
   background-color: white;
-  color: var(--dark);
-  border: 3px solid var(--secondary);
-  box-shadow: 0 6px 0 #D4C9A5;
+  color: var(--primary);
+  border: 3px solid var(--primary);
+  box-shadow: 0 6px 0 #8BBFDD;
 }
 
 .btn-secondary:active {
