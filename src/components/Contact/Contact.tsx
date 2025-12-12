@@ -56,6 +56,31 @@ const Contact = () => {
                     </div>
                 </div>
             </div>
+
+            {/* Mountain/Hill Design with Trees */}
+            <div className="mountain-design">
+                <svg className="mountain-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" preserveAspectRatio="none">
+                    {/* Mountain/Hill Shape */}
+                    <path d="M0,150 Q300,50 600,120 T1200,100 L1200,300 L0,300 Z" fill="var(--dark)" />
+                </svg>
+
+                {/* Decorative Trees */}
+                <div className="trees">
+                    <div className="tree tree-1">
+                        <div className="tree-top"></div>
+                        <div className="tree-trunk"></div>
+                    </div>
+                    <div className="tree tree-2">
+                        <div className="tree-top"></div>
+                        <div className="tree-trunk"></div>
+                    </div>
+                </div>
+
+                {/* Copyright Section */}
+                <div className="copyright-section">
+                    <p>© Powered by FlipFlex</p>
+                </div>
+            </div>
         </section>
     );
 };

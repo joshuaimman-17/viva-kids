@@ -54,7 +54,7 @@ const Header: React.FC<HeaderProps> = ({ onEnroll }) => {
         <header className={`header ${scrolled ? 'scrolled' : ''}`}>
             <div className="container header-container">
                 <div className="logo" onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
-                    <img src="/assets/logotm.jpg" alt="Viva Kids World" />
+                    <img src="/assets/logoexnbg-removebg-preview.png" alt="Viva Kids World" />
                 </div>
 
                 <nav className="desktop-nav">
