@@ -2,20 +2,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Nunito:wght@400;600;700&display=swap');
 
 :root {
-  /* Playful Palette */
-  --primary: #FF6B6B;
-  /* Coral Red - Energetic */
-  --primary-light: #FF8E8E;
-  --secondary: #4ECDC4;
-  /* Teal/Mint - Calm */
-  --accent: #FFE66D;
-  /* Sunny Yellow - Happy */
-  --dark: #292F36;
-  /* Soft Black */
-  --light: #F7FFF7;
-  /* Mint Cream */
-  --bg-creamy: #FFF9F5;
-  /* Warm background */
+  /* Viva Kids World - Exact Colors from Legacy Source */
+  --primary: #6AABD2;
+  /* Soft Blue - Main brand color */
+  --primary-light: #8BBFDD;
+  --secondary: #F5E8C7;
+  /* Warm Beige - Secondary accent */
+  --accent: #C4DFAA;
+  /* Soft Green - Cheerful highlights */
+  --success: #4CAF50;
+  /* Green - Success states */
+  --dark: #17395c;
+  /* Dark Navy Blue - Text and headers */
+  --light: #F8F9FA;
+  /* Light Grey - Clean backgrounds */
+  --bg-creamy: #FFFFFF;
+  /* White - Main background */
 
   --font-main: 'Nunito', sans-serif;
   --font-heading: 'Fredoka', sans-serif;
@@ -87,8 +89,8 @@ ul {
 .btn-primary {
   background-color: var(--primary);
   color: white;
-  box-shadow: 0 6px 0 #cc5555;
-  /* Hard shadow for button press effect */
+  box-shadow: 0 6px 0 #4A8FB8;
+  /* Darker soft blue shadow */
 }
 
 .btn-primary:active {
@@ -98,9 +100,9 @@ ul {
 
 .btn-secondary {
   background-color: white;
-  color: var(--secondary);
+  color: var(--dark);
   border: 3px solid var(--secondary);
-  box-shadow: 0 6px 0 #3aa8a0;
+  box-shadow: 0 6px 0 #D4C9A5;
 }
 
 .btn-secondary:active {

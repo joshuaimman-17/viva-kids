@@ -1,0 +1,414 @@
+/* --- CSS Variables for Viva Kids World Theme --- */
+:root {
+    --primary: #4ecdc4;
+    /* Bright Teal/Turquoise (Head/Body) */
+    --secondary: #ff6b6b;
+    /* Coral Red (Torso accent) */
+    --accent: #ffe66d;
+    /* Bright Yellow (Ears/Cheeks) */
+    --accent-dark: #ff8b94;
+    /* Soft Pink (Heart/Camera) */
+    --highlight: #ffa500;
+    /* Orange (Arms/Hands/Feet) */
+    --dark: #2d3436;
+    /* Dark Gray (Outlines) */
+    --eye-white: #ffffff;
+}
+
+/* --- Base Mascot Container --- */
+.robot-mascot {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    /* Larger for center display */
+    height: 280px;
+    /* Proportionally taller */
+    cursor: pointer;
+    z-index: 1;
+    /* Behind content */
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    opacity: 0.85;
+    /* Slightly transparent to not overwhelm content */
+}
+
+.robot-mascot:hover {
+    transform: translate(-50%, -50%) scale(1.05);
+}
+
+/* Antenna Blink Keyframes (Kept from previous version) */
+@keyframes antennaBlink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+}
+
+
+/* --- Robot Body Container --- */
+.robot-body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+/* --- Head --- */
+.robot-head {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 65px;
+    background: var(--primary);
+    border-radius: 10px;
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.1);
+    border: 3px solid var(--dark);
+    transform-style: preserve-3d;
+    z-index: 10;
+}
+
+/* Heart Antenna */
+.robot-antenna {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 20px;
+    background: var(--dark);
+}
+
+.antenna-heart {
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 18px;
+    background: var(--accent-dark);
+    position: relative;
+    transform: translateX(-50%) rotate(-45deg);
+    border-radius: 50% 50% 0 0;
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.3);
+}
+
+.antenna-heart::before,
+.antenna-heart::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 18px;
+    background: var(--accent-dark);
+    border-radius: 50%;
+}
+
+.antenna-heart::before {
+    top: -9px;
+    left: 0;
+}
+
+.antenna-heart::after {
+    left: 9px;
+    top: 0;
+}
+
+/* Ears (New Feature) */
+.ear {
+    position: absolute;
+    top: 15px;
+    width: 20px;
+    height: 20px;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.ear.left {
+    left: -10px;
+}
+
+.ear.right {
+    right: -10px;
+}
+
+
+/* Cheeks (New Feature) */
+.cheek {
+    position: absolute;
+    bottom: 10px;
+    width: 12px;
+    height: 12px;
+    background: var(--accent);
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.cheek.left {
+    left: 5px;
+}
+
+.cheek.right {
+    right: 5px;
+}
+
+
+/* Eyes */
+.robot-eyes {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 10;
+}
+
+.eye {
+    width: 20px;
+    height: 20px;
+    background: var(--eye-white);
+    border-radius: 50%;
+    /* Subtle border removed for cartoony look */
+    position: relative;
+    overflow: hidden;
+}
+
+.pupil {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    /* Smaller pupil */
+    height: 8px;
+    background: var(--dark);
+    border-radius: 50%;
+}
+
+/* Mouth (Wide Smile) */
+.robot-mouth.smile {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 35px;
+    height: 10px;
+    border: 3px solid var(--dark);
+    border-top: none;
+    border-radius: 0 0 40px 40px;
+    background: transparent;
+}
+
+/* --- Torso (Block Body) --- */
+.robot-torso {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85px;
+    height: 65px;
+    background: var(--secondary);
+    border-radius: 10px;
+    box-shadow: 0 5px 0 rgba(0, 0, 0, 0.1);
+    border: 3px solid var(--dark);
+    z-index: 5;
+}
+
+/* Camera/Chest Plate (New Feature) */
+.chest-plate {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 45px;
+    height: 35px;
+    background: var(--eye-white);
+    border-radius: 5px;
+    border: 3px solid var(--dark);
+}
+
+.camera-outer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background: var(--accent-dark);
+    border-radius: 50%;
+}
+
+.camera-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background: var(--eye-white);
+    border-radius: 50%;
+}
+
+/* --- Arms (Chunky Yellow) --- */
+.robot-arm {
+    position: absolute;
+    top: 90px;
+    width: 18px;
+    height: 45px;
+    background: var(--highlight);
+    border-radius: 10px;
+    border: 3px solid var(--dark);
+    transform-origin: top center;
+    z-index: 4;
+}
+
+.robot-arm.left {
+    left: 5px;
+}
+
+.robot-arm.right {
+    right: 5px;
+}
+
+.hand {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 18px;
+    background: var(--highlight);
+    border-radius: 50%;
+    border: 3px solid var(--dark);
+}
+
+/* --- Legs (Blue stripes, chunky yellow feet) --- */
+.robot-legs {
+    position: absolute;
+    top: 140px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 3;
+}
+
+.robot-leg {
+    width: 22px;
+    height: 60px;
+    background: var(--primary);
+    border-radius: 8px;
+    border: 3px solid var(--dark);
+    transform-origin: top center;
+    position: relative;
+    overflow: visible;
+}
+
+.foot {
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 36px;
+    height: 18px;
+    background: var(--highlight);
+    border-radius: 10px;
+    border: 3px solid var(--dark);
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.15);
+}
+
+/* --- Responsive adjustments (Scaled for new sizes) --- */
+@media (max-width: 768px) {
+    .robot-mascot {
+        width: 140px;
+        height: 200px;
+        /* Keep centered on mobile */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .robot-head {
+        width: 60px;
+        height: 50px;
+        top: 10px;
+    }
+
+    .robot-torso {
+        width: 65px;
+        height: 50px;
+        top: 60px;
+    }
+
+    .robot-arm {
+        width: 14px;
+        height: 35px;
+        top: 70px;
+    }
+
+    .robot-legs {
+        width: 40px;
+        top: 105px;
+    }
+
+    .robot-leg {
+        width: 18px;
+        height: 45px;
+    }
+
+    .hand {
+        width: 18px;
+        height: 14px;
+    }
+
+    .foot {
+        width: 28px;
+        height: 14px;
+    }
+
+    .robot-eyes {
+        width: 40px;
+        top: 15px;
+    }
+
+    .eye {
+        width: 15px;
+        height: 15px;
+    }
+
+    .ear {
+        width: 15px;
+        height: 15px;
+    }
+
+    .cheek {
+        width: 9px;
+        height: 9px;
+    }
+
+    .chest-plate {
+        width: 35px;
+        height: 25px;
+    }
+
+    .camera-outer {
+        width: 15px;
+        height: 15px;
+    }
+
+    .camera-inner {
+        width: 7px;
+        height: 7px;
+    }
+}
